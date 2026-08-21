@@ -1,0 +1,6 @@
+inference-sdk
+streamlit
+opencv-python-headless
+easyocr
+numpy
+pillow
