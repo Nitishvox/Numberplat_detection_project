@@ -121,3 +121,16 @@ headless OpenCV package for the Linux deployment environment.
 
 API credentials belong in environment variables or Streamlit Secrets, never in
 source code, screenshots, commit messages, or public issue reports.
+
+The webcam option captures a still photo from the browser, not continuous video.
+
+## Optional AI plate formatting
+
+Enable **Use AI** in the sidebar to send OCR text to Groq for constrained JSON
+normalization. Add `GROQ_API_KEY` to Streamlit Secrets; never put the key in
+source control. The AI formats Bharat Series plates such as
+`IND22BH6517A` as `IND 22 BH 65 17 A`, and explains that `BH` is Bharat Series,
+not a state code. Local formatting remains the fallback when AI is disabled or
+unavailable. The default model is Groq-hosted `openai/gpt-oss-120b`; the prompt
+uses transformer chat capabilities with deterministic temperature, JSON output,
+a strict schema, and post-response validation.
